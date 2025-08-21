@@ -27,8 +27,8 @@ jobs:
           pip install -r requirements.txt # Now this path works!
           pip install ruff mypy pytest
       - name: Lint
-        working-directory: backend # <--- And you need it for the next steps too
-        run: ruff . --output-format=github
+        working-directory: backend
+        run: ruff check . --output-format=github
       - name: Type check
         working-directory: backend # <--- And here
         run: mypy . || true
